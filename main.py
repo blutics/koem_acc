@@ -88,6 +88,8 @@ class Main(QMainWindow):
 
                 self.mainWidget.setCellWidget(i, 3, self.x[i])
                 self.x[i].currentIndexChanged.connect(self.priceCalculateX)
+                if self.list[i][1][0]==':':
+                    self.list[i]=(self.list[i][0],self.list[i][1][1:])
                 self.stitches[i][0]=self.list[i][1]
                 c=modified_stitches(self.list[i][1])
                 if p=='rn':
