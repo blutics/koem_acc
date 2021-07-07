@@ -35,7 +35,12 @@ class LoadParsing():
                 for k in [*reversed(result)]:
                     price=price+k
                 new.append("￦"+price)
-                i.string.insert_after(new)
+                print(new)
+                if i.span != None:
+                    i.span.decompose()
+                print(i)
+                # i.string.insert_after(new)
+                i.append(new)
                 index+=1
         output.write(str(self.origin))
         output.close()
